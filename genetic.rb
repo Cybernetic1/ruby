@@ -190,11 +190,11 @@ def search(max_gens, num_bits, pop_size, p_crossover, p_mutation)
 	end
 
 	pid = fork { img.display }
-	# Process.detach(pid) # wait for the child in another thread.
+	Process.detach(pid) # wait for the child in another thread.
 	# img.display
 	sleep(0.3)
 
-    # break if best[:fitness] == num_bits
+    break if best[:fitness] == num_bits
   end
   return best
 end
